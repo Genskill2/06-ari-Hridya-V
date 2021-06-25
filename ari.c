@@ -1,19 +1,23 @@
 #include<ctype.h>
 
-string ari(string *s)
+string ari(string s)
 {
-int a,letters=0,words=0,sen=0,ar;
-for(int i=0;i<strlen(s);++)
+int zero=0,letters=0,words=0,sen=0,ar;
+float a;
+for(int i=0;i<strlen(s);i++)
 {
 if(isalnum(s[i]))
 letters++;
-if(s[i]==' ')
+else if(s[i]==' ')
 words++;
-if(s[i]=='.'||s[i]=='!'||s[i]=='?')
+else if(s[i]=='.'||s[i]=='!'||s[i]=='?')
 sen++;
+else
+zero++;
 }
-a=4.71*(letters/words)+0.5*(words/sen)-21.43;
+a=(4.71*((float)letters/(float)words))+(0.5*((float)words/(float)sen))-21.43;
 ar=a+1;
+printf("%i %i %i %i\n", letters, words, sen,ar);
 if(ar==1)
 return ("Kindergarten");
 if(ar==2)
