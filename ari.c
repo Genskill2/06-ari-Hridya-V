@@ -1,6 +1,6 @@
 #include<ctype.h>
 
-string ari(string s)
+string ari(string *s)
 {
 int a,letters=0,words=0,sen=0,ar;
 for(int i=0;i<strlen(s);++)
